@@ -1,0 +1,40 @@
+{% load static %}
+{% load blog_tags %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link href="{% static "css/blog.css" %}" rel="stylesheet">
+</head>
+<body>
+    <div id="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <div id="sidebar">
+        <a href="search">szukaj</a>
+
+
+        <center>
+        <a href="/blog">
+        <h2>Mój blog</h2>
+        </a>
+
+        <p>Aktualnie na blogu jest {% total_posts %} wpisów</p>
+        </center>
+
+        Ostatnie:
+        {% show_latest_posts 3 %}
+
+
+<!--        <form method="get">-->
+<!--            {{ form.as_p }}-->
+<!--            <input type="submit" value="Szukaj">-->
+<!--        </form>-->
+
+
+
+
+    </div>
+</body>
+</html>
